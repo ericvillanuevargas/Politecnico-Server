@@ -15,12 +15,6 @@ const UsuarioSchema = Schema({
         type: String,
         required: true 
     },
-    Tipo:{
-        type: String,
-        required: true 
-        
-    },
-
 });
 
 module.exports= model("Usuario",UsuarioSchema);

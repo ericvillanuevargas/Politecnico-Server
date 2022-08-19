@@ -9,7 +9,7 @@ const crearUsuario = async(req, res = response)=>{
 
     
 
-    const{email,name,password,tipo}= req.body
+    const{email,name,password}= req.body
 
     
 
@@ -49,7 +49,6 @@ const crearUsuario = async(req, res = response)=>{
         ok: true,
         uid: dbUser.id,
         name,
-        tipo,
         token
       });
 

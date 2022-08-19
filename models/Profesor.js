@@ -16,11 +16,11 @@ const ProfesorSchema = Schema({
     },
     fecha_activacion:{
         type: String,
-        required: true ,
+        default: new Date().toLocaleDateString('en-US')
     },
     fecha_desactivacion:{
         type: String,
-        required: true ,
+        
     },
  
 
