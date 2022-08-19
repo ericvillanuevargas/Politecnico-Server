@@ -6,6 +6,8 @@ require("dotenv").config();
 
 
 
+
+
 //crear el servidor de express
 
 const app = express();
@@ -21,7 +23,9 @@ app.use(express.json() );
 
 
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/alumno", require("./routes/alumno"));
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Servidor corriendo en el puerto ${process.env.PORT}`)
 });
+

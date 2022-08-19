@@ -2,6 +2,7 @@ const { response} = require("express");
 const { validationResult } = require("express-validator");
 const Usuario = require("../models/Usuario");
 const bcrypt = require("bcryptjs");
+const { generarJWT}= require("../helpers/jwt")
 
 
 const crearUsuario = async(req, res = response)=>{
@@ -9,6 +10,8 @@ const crearUsuario = async(req, res = response)=>{
     
 
     const{email,name,password,tipo}= req.body
+
+    
 
     try {
 
