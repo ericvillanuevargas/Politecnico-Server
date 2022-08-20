@@ -8,7 +8,7 @@ const AulaSchema = Schema({
     },
     profesor_turno:{
         type: String,
-        required: true ,
+        required: true,
         unique: true
     },
     profesores_asignado:

@@ -1,4 +1,4 @@
-const  { respuesta }  =  require ( "express" ) ;
+const  { response }  =  require ( "express" ) ;
 const Profesor = require("../models/Profesor")
 const Asignatura = require("../models/Asignatura")
 const { generarJWT}= require("../helpers/jwt")
