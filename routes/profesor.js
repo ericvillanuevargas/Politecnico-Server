@@ -11,6 +11,6 @@ router.get("/solo", getProfesor);
 
 router.get("/all",getProfesores);
 
-router.post("/actEstProf",validarJWT,actualizarEstadoProf);
+router.post("/actEstProf",actualizarEstadoProf);
 
 module.exports = router; 
