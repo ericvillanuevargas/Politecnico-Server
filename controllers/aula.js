@@ -151,12 +151,62 @@ const quitarProfTurno = async (req, res) =>{
     }
 
 }
+const getAula = async (req, res = response)=>{
+    const 
+        _id
+        = req.header('_id');
+
+    
+    try{
+
+        let aula = await Aula.findById(_id);
+        if(!aula) {
+        return res.status(400).json({
+            ok: false,
+            msg: 'No hemos encontrado esta aula'
+        })
+        }
+        else{
+            return res.json(aula)
+        }
+}
+    catch (error){
+        console.log(error);
+        return res.status(500).json({
+            ok: true,
+            msg: 'Error obteniendo el aula',
+        })
+    }
+
+}
+const getAulas = async (req, res = response)=>{
+    try{
+    let aula = await Aula.find()
+    if(!aula) {
+        return res.status(400).json({
+            ok: false,
+            msg: 'No hay Aulas en la base de datos'
+        })
+    }
+    else{
+        return res.json(aula)
+        
+    }
+    }
+        catch (error){
+        console.log(error);
+        return res.status(500).json({
+            ok: true,
+            msg: 'Error obteniendo todas las aulas',
+        })
+    }
+}
 
 
 module.exports={
     crearAula,
-    //getProfesor,
-    //getProfesores,
+    getAula,
+    getAulas,
     PonerProfTurno,
     quitarProfTurno
  }
